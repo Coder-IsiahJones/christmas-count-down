@@ -86,23 +86,26 @@ img {
   overflow: hidden;
 }
 
-/*=============== HEADER & NAV ===============*/
+/* Buttons */
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  font-weight: var(--font-bold);
+  padding: 1.125rem 2rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.2);
+  transition: background-color 0.4s;
+}
 
-/* Navigation for mobile devices */
+.button:hover {
+  background-color: var(--first-color-alt);
+}
 
-/* Active link */
+.button__dark {
+  background-color: var(--first-color-dark);
+}
 
-/* Show menu */
-
-/*=============== BUTTON ===============*/
-
-/*=============== HOME ===============*/
-
-/*=============== BREAKPOINTS ===============*/
-/* For small devices */
-
-/* For medium devices */
-
-/* For lower devices */
-
-/* For large devices */
+.button__dark:hover {
+  background-color: var(--first-color-darker);
+}
