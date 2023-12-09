@@ -64,7 +64,7 @@ const toggle = () => {
   width: 100%;
   top: 0;
   left: 0;
-  background-color: var(--first-color-dark);
+  background-color: var(--body-color);
   z-index: var(--z-fixed);
 }
 
@@ -203,29 +203,5 @@ const toggle = () => {
 /* Show menu */
 .show-menu {
   right: 0;
-}
-
-/* Buttons */
-.button {
-  display: inline-block;
-  background-color: var(--first-color);
-  color: #fff;
-  font-weight: var(--font-bold);
-  padding: 1.125rem 2rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 24px hsla(0, 0%, 0%, 0.2);
-  transition: background-color 0.4s;
-}
-
-.button:hover {
-  background-color: var(--first-color-alt);
-}
-
-.button__dark {
-  background-color: var(--first-color-dark);
-}
-
-.button__dark:hover {
-  background-color: var(--first-color-darker);
 }
 </style>
