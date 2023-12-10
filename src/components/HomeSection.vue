@@ -61,6 +61,12 @@ const christmasMessage = computed(() => {
   return isChristmas.value ? 'Merry Christmas! Enjoy the festive season.' : '';
 });
 
+const emit = defineEmits(['openModal']);
+const openModal = () => {
+  // emit value to parent component
+  emit('openModal', true);
+};
+
 watchEffect(() => {
   document.title = `${daysToChristmas.value} ${countdownText.value} To Christmas`;
 });
@@ -98,7 +104,7 @@ watchEffect(() => {
             Share some Christmas spirit and happiness with these festive cards.
           </p>
 
-          <a href="#" class="button">Send a Christmas Card</a>
+          <a @click="openModal" class="button">Send a Christmas Card</a>
         </div>
 
         <img src="/src/assets/bell.png" alt="image" class="home__bell" />

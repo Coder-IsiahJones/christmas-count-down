@@ -6,6 +6,12 @@ const navMenu = ref<HTMLElement | null>(null);
 const toggle = () => {
   navMenu.value?.classList.toggle('show-menu');
 };
+
+const emit = defineEmits(['openModal']);
+const openModal = () => {
+  // emit value to parent component
+  emit('openModal', true);
+};
 </script>
 
 <template>
@@ -41,7 +47,7 @@ const toggle = () => {
             <div class="nav__circle">2</div>
           </div>
 
-          <a href="#" class="button button__dark">Send a Card</a>
+          <a @click="openModal" class="button button__dark">Send a Card</a>
         </div>
 
         <!-- Close Button -->
