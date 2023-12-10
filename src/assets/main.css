@@ -109,3 +109,17 @@ img {
 .button__dark:hover {
   background-color: var(--first-color-darker);
 }
+
+/*============= Breakpoints =============*/
+/* Small Devices */
+@media screen and (max-width: 360px) {
+  .container {
+    margin-inline: 1rem;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .container {
+    margin-inline: auto;
+  }
+}

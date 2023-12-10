@@ -206,4 +206,98 @@ const christmasMessage = computed(() => {
   top: 6rem;
   z-index: -1;
 }
+
+/*============= Breakpoints =============*/
+
+@media screen and (max-width: 400px) {
+  .home__container {
+    grid-template-columns: 360px;
+    justify-content: center;
+    row-gap: 3rem;
+  }
+
+  .home__img {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (max-width: 968px) and (max-height: 720px) {
+  .home {
+    height: initial;
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .home__container {
+    grid-template-columns: repeat(2, 400px);
+    align-items: center;
+  }
+
+  .home__data {
+    text-align: initial;
+  }
+
+  .home__number {
+    background-color: var(--first-color-dark);
+  }
+
+  .home__blob {
+    width: 800px;
+    height: 800px;
+    left: -28rem;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .home__container {
+    grid-template-columns: 650px 485px;
+    padding-block: 6rem 0;
+  }
+
+  .home__img {
+    width: 650px;
+    transform: translateX(2rem) scale(1);
+  }
+
+  .home__data {
+    transform: translateX(-2rem);
+  }
+
+  .home__number,
+  .home__number::after {
+    width: 52px;
+    height: 52px;
+  }
+
+  .home__description {
+    margin-bottom: 3rem;
+  }
+
+  .home__bell {
+    width: 60px;
+    top: initial;
+    left: 2rem;
+    bottom: 0;
+  }
+
+  .home__star {
+    width: 70px;
+    left: initial;
+    right: 3rem;
+    bottom: 10rem;
+  }
+
+  .home__blob {
+    width: 1200px;
+    height: 1200px;
+    left: -48rem;
+  }
+}
+
+@media screen and (min-width 1600px) {
+  .home__blob {
+    left: -100%;
+    top: 0;
+  }
+}
 </style>

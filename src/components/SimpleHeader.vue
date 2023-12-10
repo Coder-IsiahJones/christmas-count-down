@@ -204,4 +204,43 @@ const toggle = () => {
 .show-menu {
   right: 0;
 }
+
+/*============= Breakpoints =============*/
+
+@media screen and (max-width: 360px) {
+  .nav__buttons {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    row-gap: 1rem;
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .nav__menu {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .nav {
+    height: calc(var(--header-height) + 2rem);
+  }
+
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+
+  .nav__menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav__list {
+    margin-inline: auto;
+    flex-direction: row;
+    column-gap: 4.5rem;
+  }
+}
 </style>
