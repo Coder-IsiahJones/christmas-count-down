@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref, computed, watch } from 'vue';
+import { ref, computed, watch, watchEffect } from 'vue';
 
 const daysToChristmas = ref<number>(0);
 const hours = ref<number>(0);
@@ -59,6 +59,10 @@ const isChristmas = computed(() => {
 
 const christmasMessage = computed(() => {
   return isChristmas.value ? 'Merry Christmas! Enjoy the festive season.' : '';
+});
+
+watchEffect(() => {
+  document.title = `${daysToChristmas.value} ${countdownText.value} To Christmas`;
 });
 </script>
 
