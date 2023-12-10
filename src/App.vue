@@ -21,7 +21,7 @@ const generateChristmasCard = () => {
   // grab a random number between 1 and 19
   const random = Math.floor(Math.random() * 18) + 1;
   // set the image path
-  christmasCard.value = `src/assets/cards/${random}.png`;
+  christmasCard.value = `/public/cards/${random}.png`;
 
   return christmasCard.value;
 };
