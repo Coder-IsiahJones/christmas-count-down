@@ -43,7 +43,7 @@ onClickOutside(target, () => emit('modal-close'));
 }
 
 .modal-container {
-  max-width: 50%;
+  max-width: min-content;
   margin: 150px auto;
   padding: 1.25rem 1.875rem;
   background-color: #fff;
