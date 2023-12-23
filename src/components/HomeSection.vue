@@ -69,8 +69,20 @@ const openModal = () => {
   emit('openModal', true);
 };
 
+const outputNumber = computed(() => {
+  return daysToChristmas.value > 1
+    ? daysToChristmas.value
+    : daysToChristmas.value === 1 && hours.value === 0
+      ? '1'
+      : hours.value > 0
+        ? hours.value
+        : minutes.value > 0
+          ? minutes.value
+          : seconds.value;
+});
+
 watchEffect(() => {
-  document.title = `${daysToChristmas.value} ${countdownText.value} To Christmas`;
+  document.title = `${outputNumber.value} ${countdownText.value} To Christmas`;
 });
 </script>
 
@@ -85,17 +97,7 @@ watchEffect(() => {
             <h1 v-if="!isChristmas" class="home__title">
               Last
               <div class="home__number">
-                {{
-                  daysToChristmas > 1
-                    ? daysToChristmas
-                    : daysToChristmas === 1 && hours === 0
-                      ? '1'
-                      : hours > 0
-                        ? hours
-                        : minutes > 0
-                          ? minutes
-                          : seconds
-                }}
+                {{ outputNumber }}
               </div>
               <div class="home__text">{{ countdownText }}</div>
               To Receive Christmas
