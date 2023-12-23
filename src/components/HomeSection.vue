@@ -304,7 +304,7 @@ watchEffect(() => {
   }
 }
 
-@media screen and (min-width 1600px) {
+@media screen and (min-width: 1600px) {
   .home__blob {
     left: -100%;
     top: 0;
