@@ -8,13 +8,15 @@ const seconds = ref<number>(0);
 
 const countdownText = computed(() => {
   // Determine the appropriate unit of time for the countdown
-  return daysToChristmas.value >= 1
+  return daysToChristmas.value > 1
     ? 'Days'
-    : hours.value >= 1
-      ? 'Hours'
-      : minutes.value >= 1
-        ? 'Minutes'
-        : 'Seconds';
+    : daysToChristmas.value === 1 && hours.value === 0
+      ? 'Day'
+      : hours.value >= 1
+        ? 'Hours'
+        : minutes.value >= 1
+          ? 'Minutes'
+          : 'Seconds';
 });
 
 const calcCountdown = () => {
@@ -86,11 +88,13 @@ watchEffect(() => {
                 {{
                   daysToChristmas > 1
                     ? daysToChristmas
-                    : hours > 0
-                      ? hours
-                      : minutes > 0
-                        ? minutes
-                        : seconds
+                    : daysToChristmas === 1 && hours === 0
+                      ? '1'
+                      : hours > 0
+                        ? hours
+                        : minutes > 0
+                          ? minutes
+                          : seconds
                 }}
               </div>
               <div class="home__text">{{ countdownText }}</div>
